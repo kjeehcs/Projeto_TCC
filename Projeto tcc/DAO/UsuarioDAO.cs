@@ -15,7 +15,7 @@ namespace Projeto_tcc.DAO
     {
         public bool tem = false;
         public string mensagem = "";
-        public bool verificarUsuario(Usuario model)
+        public bool verificarUsuario(UsuariosInfo model)
         {
             using (NpgsqlConnection connection = ConnectionDB.Connection())
             {
@@ -47,7 +47,7 @@ namespace Projeto_tcc.DAO
         }
 
 
-        public Usuario selectById(Usuario model)
+        public UsuariosInfo selectById(UsuariosInfo model)
         {
             NpgsqlCommand command = new NpgsqlCommand();
             command.CommandType = System.Data.CommandType.Text;

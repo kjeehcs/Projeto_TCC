@@ -14,7 +14,7 @@ namespace Projeto_tcc.Controller
 
         public bool verificarUsuario(string login_usuario, string senha_usuario)
         {
-            Usuario model = new Usuario();
+            UsuariosInfo model = new UsuariosInfo();
 
             model.login_usuario = login_usuario;
             model.senha_usuario = senha_usuario;

@@ -8,7 +8,7 @@ using Projeto_tcc.Model;
 
 namespace Projeto_tcc.Model
 {
-    public class Usuario
+    public class UsuariosInfo
     {
         public int id_usuario { get; set; }
         public string login_usuario { get; set; }
@@ -16,9 +16,10 @@ namespace Projeto_tcc.Model
         public bool tem;
         public string mensagem = "";
 
-        public Usuario()
+        public UsuariosInfo()
         {
         }
+
         public bool VerificarUsuario()
         {
             UsuarioDAO dao = new UsuarioDAO();

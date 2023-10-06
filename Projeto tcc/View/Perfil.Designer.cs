@@ -37,6 +37,10 @@
             this.lblDash = new System.Windows.Forms.Label();
             this.lbltema = new System.Windows.Forms.Label();
             this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
+            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnfoto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,7 +97,7 @@
             this.materialTextBox22.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox22.HideSelection = true;
             this.materialTextBox22.LeadingIcon = null;
-            this.materialTextBox22.Location = new System.Drawing.Point(35, 294);
+            this.materialTextBox22.Location = new System.Drawing.Point(34, 311);
             this.materialTextBox22.MaxLength = 32767;
             this.materialTextBox22.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox22.Name = "materialTextBox22";
@@ -121,7 +125,7 @@
             this.materialTextBox23.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox23.HideSelection = true;
             this.materialTextBox23.LeadingIcon = null;
-            this.materialTextBox23.Location = new System.Drawing.Point(35, 380);
+            this.materialTextBox23.Location = new System.Drawing.Point(34, 407);
             this.materialTextBox23.MaxLength = 32767;
             this.materialTextBox23.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox23.Name = "materialTextBox23";
@@ -143,7 +147,7 @@
             // btnfoto
             // 
             this.btnfoto.Image = ((System.Drawing.Image)(resources.GetObject("btnfoto.Image")));
-            this.btnfoto.Location = new System.Drawing.Point(165, 107);
+            this.btnfoto.Location = new System.Drawing.Point(174, 72);
             this.btnfoto.Name = "btnfoto";
             this.btnfoto.Size = new System.Drawing.Size(106, 87);
             this.btnfoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -192,12 +196,69 @@
             this.materialTextBox1.TrailingIcon = null;
             this.materialTextBox1.TextChanged += new System.EventHandler(this.materialTextBox1_TextChanged);
             // 
+            // materialButton1
+            // 
+            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton1.Depth = 0;
+            this.materialButton1.HighEmphasis = true;
+            this.materialButton1.Icon = null;
+            this.materialButton1.Location = new System.Drawing.Point(354, 526);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton1.Name = "materialButton1";
+            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton1.Size = new System.Drawing.Size(76, 36);
+            this.materialButton1.TabIndex = 12;
+            this.materialButton1.Text = "Salvar";
+            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton1.UseAccentColor = false;
+            this.materialButton1.UseVisualStyleBackColor = true;
+            this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(39, 188);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 29);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Nome";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Location = new System.Drawing.Point(38, 279);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 29);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "E-mail";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+            this.label3.Location = new System.Drawing.Point(39, 375);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(158, 29);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Alterar Senha";
+            // 
             // Perfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(885, 612);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.materialButton1);
             this.Controls.Add(this.materialTextBox1);
             this.Controls.Add(this.lbltema);
             this.Controls.Add(this.lblDash);
@@ -224,5 +285,9 @@
         private System.Windows.Forms.Label lblDash;
         private System.Windows.Forms.Label lbltema;
         private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
+        private MaterialSkin.Controls.MaterialButton materialButton1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

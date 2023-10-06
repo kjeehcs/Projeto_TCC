@@ -50,11 +50,11 @@ namespace Projeto_tcc.View
             string senha = Convert.ToString(txb_user_senha.Text);
             bool usuarioEncontrado = false;
 
-            List<Usuario> usuarios = usoRep.findAll();
+            List<UsuariosInfo> usuarios = usoRep.findAll();
 
 
 
-            foreach (Usuario uso in usuarios)
+            foreach (UsuariosInfo uso in usuarios)
             {
                 if (uso.login_usuario == login && uso.senha_usuario == senha)
                 {
