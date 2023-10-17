@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using Projeto_tcc.Repository;
+using Projeto_tcc.Model;
 
 namespace Projeto_tcc
 {
     public partial class Main : Form
     {
+        private readonly UsuariosRepository usuariosRepository = new UsuariosRepository();
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
 
         private static extern IntPtr CreateRoundRectRgn
@@ -25,14 +28,30 @@ namespace Projeto_tcc
             int nHeightEllipse
             );
 
+        private string login_usuario;
 
-
-        public Main()
+        public Main(string login)
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+            this.login_usuario = login;
+            CarregarImagem();
         }
+        private void CarregarImagem()
+        {
+            UsuariosInfo usuario = new UsuariosInfo();
+            List<UsuariosInfo> usuariosInfos = usuariosRepository.findAll();
 
+            foreach (UsuariosInfo user in usuariosInfos)
+            {
+                if (user.login_usuario == login_usuario)
+                {
+                    usuario = user;
+                }
+            }
+            pictureBox4.Image = System.Drawing.Image.FromFile(usuario.imagem_data);
+            label1.Text = usuario.nome_usuario;
+        }
         private void main_Load(object sender, EventArgs e)
         {
             AbrirNOPrincipal(new Inicio());
@@ -91,7 +110,12 @@ namespace Projeto_tcc
         private void btnPerfil_Click(object sender, EventArgs e)
         {
             btnPerfil.BackColor = Color.FromArgb(45, 51, 73);
-            AbrirNOPrincipal(new Perfil());
+            AbrirNOPrincipal(new Perfil(login_usuario));
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
 
         }
     }

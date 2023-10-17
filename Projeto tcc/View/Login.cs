@@ -8,10 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using Projeto_tcc.Controller;
 using Projeto_tcc.Model;
 using Projeto_tcc.Repository;
 using Projeto_tcc.View;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Projeto_tcc.View
 {
@@ -48,11 +48,10 @@ namespace Projeto_tcc.View
 
             string login = Convert.ToString(txb_user_login.Text);
             string senha = Convert.ToString(txb_user_senha.Text);
+
             bool usuarioEncontrado = false;
 
             List<UsuariosInfo> usuarios = usoRep.findAll();
-
-
 
             foreach (UsuariosInfo uso in usuarios)
             {
@@ -60,9 +59,9 @@ namespace Projeto_tcc.View
                 {
                     //MessageBox.Show(uso.id_usuario.ToString());
                     MessageBox.Show("Usuário encontrado");
-                    Main profile = new Main();
                     this.Hide();
-                    profile.Show();
+                    Main main = new Main(login);
+                    main.Show();
                     usuarioEncontrado = true;
                     break;
                 }

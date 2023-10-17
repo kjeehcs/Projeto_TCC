@@ -36,5 +36,7 @@ namespace Projeto_tcc.DB
             NpgsqlDataReader dr = command.ExecuteReader();
             return dr;
         }
+
+
     }
 }
