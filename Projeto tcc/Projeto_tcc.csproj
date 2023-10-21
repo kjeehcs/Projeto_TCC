@@ -103,6 +103,12 @@
     <Compile Include="Model\dao\IUsuarios.cs" />
     <Compile Include="Model\Repository\UsuariosRepository.cs" />
     <Compile Include="Model\entities\Usuario.cs" />
+    <Compile Include="View\Cadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Cadastro.Designer.cs">
+      <DependentUpon>Cadastro.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Dash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="View\Cadastro.resx">
+      <DependentUpon>Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Dash.resx">
       <DependentUpon>Dash.cs</DependentUpon>
     </EmbeddedResource>

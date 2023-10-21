@@ -15,7 +15,8 @@ namespace Projeto_tcc.Model
         public string nome_usuario { get; set; }
         public string email_usuario { get; set; }
         public string imagem_data { get; set; }
-       
+        public string nivel_usuario { get; set; }
+
         public UsuariosInfo()
         {
         }

@@ -57,6 +57,11 @@ namespace Projeto_tcc
                     usuario = user;
                 }
             }
+
+            if (usuario.nivel_usuario == "Admin")
+            {
+                btnCadastrar.Visible = true;
+            }
             btnfoto.Image = System.Drawing.Image.FromFile(usuario.imagem_data);
          
 
@@ -73,6 +78,7 @@ namespace Projeto_tcc
                     txb_senha.Text = usuario.senha_usuario;
                     txb_nome.Text = usuario.nome_usuario;
                     txb_email.Text = usuario.email_usuario;
+                    txbNivelUsuario.Text = usuario.nivel_usuario;
                 }
                 else
                 {
@@ -80,7 +86,6 @@ namespace Projeto_tcc
                 }
             }
         }
-
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -134,7 +139,7 @@ namespace Projeto_tcc
             MessageBox.Show(caminhoDaImagem);
         }
 
-        private void materialButton1_Click(object sender, EventArgs e)
+        private void btnSalvar_Click(object sender, EventArgs e)
         {
             UsuariosInfo usuario = new UsuariosInfo();
             usuario.login_usuario = txb_login.Text;
@@ -165,7 +170,7 @@ namespace Projeto_tcc
             CarregarDadosUsuario();
         }
 
-        private void materialButton2_Click_1(object sender, EventArgs e)
+        private void btnAlterar_Click(object sender, EventArgs e)
         {
             txb_login.Enabled = true;
             txb_senha.Enabled = true;
@@ -194,6 +199,12 @@ namespace Projeto_tcc
         private void Perfil_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            Cadastro cadastro = new Cadastro();
+            cadastro.Show();
         }
     }
 }

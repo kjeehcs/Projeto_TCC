@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Projeto_tcc.Repository;
 using Projeto_tcc.Model;
+using Projeto_tcc.View;
 
 namespace Projeto_tcc
 {
@@ -117,6 +118,11 @@ namespace Projeto_tcc
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            AbrirNOPrincipal(new Cadastro());
         }
     }
 }

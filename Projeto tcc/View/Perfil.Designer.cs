@@ -35,7 +35,7 @@
             this.btnfoto = new System.Windows.Forms.PictureBox();
             this.lblDash = new System.Windows.Forms.Label();
             this.lbltema = new System.Windows.Forms.Label();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.btnSalvar = new MaterialSkin.Controls.MaterialButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,7 +43,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.materialSwitch1 = new MaterialSkin.Controls.MaterialSwitch();
             this.label5 = new System.Windows.Forms.Label();
-            this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
+            this.btnAlterar = new MaterialSkin.Controls.MaterialButton();
+            this.btnCadastrar = new MaterialSkin.Controls.MaterialButton();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txbNivelUsuario = new MaterialSkin.Controls.MaterialTextBox2();
             ((System.ComponentModel.ISupportInitialize)(this.btnfoto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -182,25 +185,25 @@
             this.lbltema.Text = "Tema Claro";
             this.lbltema.Click += new System.EventHandler(this.label2_Click);
             // 
-            // materialButton1
+            // btnSalvar
             // 
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(317, 526);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(76, 36);
-            this.materialButton1.TabIndex = 12;
-            this.materialButton1.Text = "Salvar";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
-            this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
+            this.btnSalvar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSalvar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnSalvar.Depth = 0;
+            this.btnSalvar.HighEmphasis = true;
+            this.btnSalvar.Icon = null;
+            this.btnSalvar.Location = new System.Drawing.Point(188, 526);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnSalvar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnSalvar.Size = new System.Drawing.Size(76, 36);
+            this.btnSalvar.TabIndex = 12;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnSalvar.UseAccentColor = false;
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // label1
             // 
@@ -299,25 +302,85 @@
             this.label5.TabIndex = 20;
             this.label5.Text = "id";
             // 
-            // materialButton2
+            // btnAlterar
             // 
-            this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton2.Depth = 0;
-            this.materialButton2.HighEmphasis = true;
-            this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(442, 526);
-            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton2.Name = "materialButton2";
-            this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton2.Size = new System.Drawing.Size(84, 36);
-            this.materialButton2.TabIndex = 23;
-            this.materialButton2.Text = "Alterar";
-            this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton2.UseAccentColor = false;
-            this.materialButton2.UseVisualStyleBackColor = true;
-            this.materialButton2.Click += new System.EventHandler(this.materialButton2_Click_1);
+            this.btnAlterar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAlterar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnAlterar.Depth = 0;
+            this.btnAlterar.HighEmphasis = true;
+            this.btnAlterar.Icon = null;
+            this.btnAlterar.Location = new System.Drawing.Point(364, 526);
+            this.btnAlterar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnAlterar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnAlterar.Size = new System.Drawing.Size(84, 36);
+            this.btnAlterar.TabIndex = 23;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnAlterar.UseAccentColor = false;
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            // 
+            // btnCadastrar
+            // 
+            this.btnCadastrar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCadastrar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnCadastrar.Depth = 0;
+            this.btnCadastrar.HighEmphasis = true;
+            this.btnCadastrar.Icon = null;
+            this.btnCadastrar.Location = new System.Drawing.Point(573, 526);
+            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnCadastrar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnCadastrar.Size = new System.Drawing.Size(106, 36);
+            this.btnCadastrar.TabIndex = 24;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnCadastrar.UseAccentColor = false;
+            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Visible = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.Control;
+            this.label6.Location = new System.Drawing.Point(39, 379);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(157, 29);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "Nível Usuário";
+            // 
+            // txbNivelUsuario
+            // 
+            this.txbNivelUsuario.AnimateReadOnly = false;
+            this.txbNivelUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txbNivelUsuario.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txbNivelUsuario.Depth = 0;
+            this.txbNivelUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txbNivelUsuario.HideSelection = true;
+            this.txbNivelUsuario.LeadingIcon = null;
+            this.txbNivelUsuario.Location = new System.Drawing.Point(35, 411);
+            this.txbNivelUsuario.MaxLength = 32767;
+            this.txbNivelUsuario.MouseState = MaterialSkin.MouseState.OUT;
+            this.txbNivelUsuario.Name = "txbNivelUsuario";
+            this.txbNivelUsuario.PasswordChar = '\0';
+            this.txbNivelUsuario.PrefixSuffixText = null;
+            this.txbNivelUsuario.ReadOnly = false;
+            this.txbNivelUsuario.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txbNivelUsuario.SelectedText = "";
+            this.txbNivelUsuario.SelectionLength = 0;
+            this.txbNivelUsuario.SelectionStart = 0;
+            this.txbNivelUsuario.ShortcutsEnabled = true;
+            this.txbNivelUsuario.Size = new System.Drawing.Size(370, 48);
+            this.txbNivelUsuario.TabIndex = 26;
+            this.txbNivelUsuario.TabStop = false;
+            this.txbNivelUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txbNivelUsuario.TrailingIcon = null;
+            this.txbNivelUsuario.UseSystemPasswordChar = false;
             // 
             // Perfil
             // 
@@ -325,7 +388,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(885, 612);
-            this.Controls.Add(this.materialButton2);
+            this.Controls.Add(this.txbNivelUsuario);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.btnCadastrar);
+            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.materialSwitch1);
             this.Controls.Add(this.label4);
@@ -333,7 +399,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.materialButton1);
+            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.lbltema);
             this.Controls.Add(this.lblDash);
             this.Controls.Add(this.btnfoto);
@@ -359,7 +425,7 @@
         private System.Windows.Forms.PictureBox btnfoto;
         private System.Windows.Forms.Label lblDash;
         private System.Windows.Forms.Label lbltema;
-        private MaterialSkin.Controls.MaterialButton materialButton1;
+        private MaterialSkin.Controls.MaterialButton btnSalvar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -367,6 +433,9 @@
         private System.Windows.Forms.Label label4;
         private MaterialSkin.Controls.MaterialSwitch materialSwitch1;
         private System.Windows.Forms.Label label5;
-        private MaterialSkin.Controls.MaterialButton materialButton2;
+        private MaterialSkin.Controls.MaterialButton btnAlterar;
+        public MaterialSkin.Controls.MaterialButton btnCadastrar;
+        private System.Windows.Forms.Label label6;
+        private MaterialSkin.Controls.MaterialTextBox2 txbNivelUsuario;
     }
 }

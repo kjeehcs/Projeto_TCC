@@ -31,7 +31,9 @@ namespace Projeto_tcc.Repository
                     usuario.senha_usuario = (string)dr["senha"];
                     usuario.nome_usuario = (string)dr["nome_usuario"];
                     usuario.email_usuario = (string)dr["email_usuario"];
+                    usuario.nivel_usuario = (string)dr["nivel_usuario"];
                     usuario.imagem_data = (string)dr["imagem_data"];
+                    
 
                     usuarios.Add(usuario);
                 }
@@ -44,14 +46,16 @@ namespace Projeto_tcc.Repository
         {
             NpgsqlCommand command = new NpgsqlCommand();
             command.CommandType = System.Data.CommandType.Text;
-            command.CommandText = "INSERT INTO Usuarios (login, senha, nome_usuario, email_usuario, imagem_data) " +
-                                               "VALUES (@login, @senha, @nome_usuario, @email_usuario, @imagem_data)";
+            command.CommandText = "INSERT INTO Usuarios (login, senha, nome_usuario, email_usuario, nivel_usuario, imagem_data) " +
+                                               "VALUES (@login, @senha, @nome_usuario, @email_usuario, @nivel_usuario, @imagem_data)";
 
             command.Parameters.AddWithValue("@login", obj.login_usuario);
             command.Parameters.AddWithValue("@senha", obj.senha_usuario);
             command.Parameters.AddWithValue("@nome_usuario", obj.nome_usuario);
             command.Parameters.AddWithValue("@email_usuario", obj.email_usuario);
+            command.Parameters.AddWithValue("@nivel_usuario", obj.nivel_usuario);
             command.Parameters.AddWithValue("@imagem_data", obj.imagem_data);
+            
 
             ConnectionDB.CRUD(command);
         }

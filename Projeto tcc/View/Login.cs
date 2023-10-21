@@ -63,10 +63,10 @@ namespace Projeto_tcc.View
                     Main main = new Main(login);
                     main.Show();
                     usuarioEncontrado = true;
+                    Cadastro cadastro = new Cadastro();
                     break;
                 }
             }
-            //MessageBox.Show(usuarioEncontrado.ToString());
             if (!usuarioEncontrado)
             {
                 MessageBox.Show("Usuário não encontrado");
