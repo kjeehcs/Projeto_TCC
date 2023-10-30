@@ -49,7 +49,6 @@ namespace Projeto_tcc.View
 
         private void btnSalvarCadastro_Click(object sender, EventArgs e)
         {
-            
             Usuarios usuario = new Usuarios();
             usuario.login_usuario = txb_loginCadastro.Text;
             usuario.senha_usuario = txb_senhaCadastro.Text;
