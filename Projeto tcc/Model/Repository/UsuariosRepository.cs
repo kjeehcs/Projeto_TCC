@@ -12,7 +12,7 @@ namespace Projeto_tcc.Repository
 {
     public class UsuariosRepository : IUsuarios
     {
-        public List<UsuariosInfo> findAll()
+        public List<Usuarios> findAll()
         {
             using (NpgsqlConnection connection = ConnectionDB.Connection())
             {
@@ -21,11 +21,11 @@ namespace Projeto_tcc.Repository
                 command.CommandType = System.Data.CommandType.Text;
                 command.CommandText = "SELECT * FROM Usuarios";
                 
-                List<UsuariosInfo> usuarios = new List<UsuariosInfo>();
+                List<Usuarios> usuarios = new List<Usuarios>();
                 NpgsqlDataReader dr = ConnectionDB.Select(command);
                 while (dr.Read())
                 {
-                    UsuariosInfo usuario = new UsuariosInfo();
+                    Usuarios usuario = new Usuarios();
                     usuario.id_usuario = (int)dr["id_usuario"];
                     usuario.login_usuario = (string)dr["login"];
                     usuario.senha_usuario = (string)dr["senha"];
@@ -42,7 +42,7 @@ namespace Projeto_tcc.Repository
             }
         }
 
-        public void insert(UsuariosInfo obj)
+        public void insert(Usuarios obj)
         {
             NpgsqlCommand command = new NpgsqlCommand();
             command.CommandType = System.Data.CommandType.Text;
@@ -60,7 +60,7 @@ namespace Projeto_tcc.Repository
             ConnectionDB.CRUD(command);
         }
 
-        public void update(UsuariosInfo obj)
+        public void update(Usuarios obj)
         {
             NpgsqlCommand command = new NpgsqlCommand();
             command.CommandType = System.Data.CommandType.Text;

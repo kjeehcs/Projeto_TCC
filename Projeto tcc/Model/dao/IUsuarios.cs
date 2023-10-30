@@ -9,9 +9,9 @@ namespace Projeto_tcc.Model
 {
     public interface IUsuarios
     {
-        List<UsuariosInfo> findAll();
-        void insert(UsuariosInfo obj);
-        void update(UsuariosInfo obj);
+        List<Usuarios> findAll();
+        void insert(Usuarios obj);
+        void update(Usuarios obj);
 
     }
 }

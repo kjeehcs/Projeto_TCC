@@ -12,17 +12,19 @@ using Projeto_tcc.Model;
 using Projeto_tcc.Repository;
 using Projeto_tcc.View;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using Npgsql.Internal.TypeHandlers.LTreeHandlers;
 
 namespace Projeto_tcc.View
 {
     public partial class Login : Form
     {
         private UsuariosRepository usoRep = new UsuariosRepository();
-        
+
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
 
 
-         private static extern IntPtr CreateRoundRectRgn
+        private static extern IntPtr CreateRoundRectRgn
             (
             int nLeftRect,
             int nTopRect,
@@ -31,11 +33,12 @@ namespace Projeto_tcc.View
             int nWidthEllipse,
             int nHeightEllipse
             );
-        
+
         public Login()
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -51,9 +54,9 @@ namespace Projeto_tcc.View
 
             bool usuarioEncontrado = false;
 
-            List<UsuariosInfo> usuarios = usoRep.findAll();
+            List<Usuarios> usuarios = usoRep.findAll();
 
-            foreach (UsuariosInfo uso in usuarios)
+            foreach (Usuarios uso in usuarios)
             {
                 if (uso.login_usuario == login && uso.senha_usuario == senha)
                 {
@@ -69,7 +72,7 @@ namespace Projeto_tcc.View
             }
             if (!usuarioEncontrado)
             {
-                MessageBox.Show("Usuário não encontrado");
+                MessageBox.Show("Login ou Senha incorretos. Por favor, tente novamente.");
                 login = Convert.ToString(txb_user_login.Text = "");
                 senha = Convert.ToString(txb_user_senha.Text = "");
                 txb_user_login.Focus();
@@ -90,6 +93,18 @@ namespace Projeto_tcc.View
         private void pictureBox2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void picMostrar_Click(object sender, EventArgs e)
+        {
+            picOcultar.BringToFront();
+            txb_user_senha.PasswordChar = (txb_user_senha.PasswordChar == '●') ? '\0' : '●';
+        }
+
+        private void picOcultar_Click(object sender, EventArgs e)
+        {
+            picMostrar.BringToFront();
+            txb_user_senha.PasswordChar = (txb_user_senha.PasswordChar == '\0') ? '●' : txb_user_senha.PasswordChar;
         }
     }
 }

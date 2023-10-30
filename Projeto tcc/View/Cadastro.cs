@@ -50,14 +50,14 @@ namespace Projeto_tcc.View
         private void btnSalvarCadastro_Click(object sender, EventArgs e)
         {
             
-            UsuariosInfo usuario = new UsuariosInfo();
+            Usuarios usuario = new Usuarios();
             usuario.login_usuario = txb_loginCadastro.Text;
             usuario.senha_usuario = txb_senhaCadastro.Text;
             usuario.nome_usuario = txb_nomeCadastro.Text;
             usuario.email_usuario = txb_emailCadastro.Text;
             usuario.imagem_data = caminhoDaImagem;
             usuario.nivel_usuario = comboBoxNivelUsuario.Text;
-            //usuario.id_usuario = Convert.ToInt32(label5.Text);
+            
             
             
             try
@@ -71,6 +71,23 @@ namespace Projeto_tcc.View
                 MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             
+        }
+
+        private void picMostrar_Click(object sender, EventArgs e)
+        {
+            picOcultar.BringToFront();
+            txb_senhaCadastro.PasswordChar = (txb_senhaCadastro.PasswordChar == '●') ? '\0' : '●';
+        }
+
+        private void picOcultar_Click(object sender, EventArgs e)
+        {
+            picMostrar.BringToFront();
+            txb_senhaCadastro.PasswordChar = (txb_senhaCadastro.PasswordChar == '\0') ? '●' : txb_senhaCadastro.PasswordChar;
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

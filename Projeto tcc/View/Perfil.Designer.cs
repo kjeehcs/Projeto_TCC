@@ -41,13 +41,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txb_login = new MaterialSkin.Controls.MaterialTextBox2();
             this.label4 = new System.Windows.Forms.Label();
-            this.materialSwitch1 = new MaterialSkin.Controls.MaterialSwitch();
             this.label5 = new System.Windows.Forms.Label();
             this.btnAlterar = new MaterialSkin.Controls.MaterialButton();
             this.btnCadastrar = new MaterialSkin.Controls.MaterialButton();
             this.label6 = new System.Windows.Forms.Label();
             this.txbNivelUsuario = new MaterialSkin.Controls.MaterialTextBox2();
+            this.picMostrar = new System.Windows.Forms.PictureBox();
+            this.picOcultar = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnfoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMostrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picOcultar)).BeginInit();
             this.SuspendLayout();
             // 
             // switchTema
@@ -87,7 +91,7 @@
             this.txb_nome.SelectionStart = 0;
             this.txb_nome.ShortcutsEnabled = true;
             this.txb_nome.Size = new System.Drawing.Size(370, 48);
-            this.txb_nome.TabIndex = 3;
+            this.txb_nome.TabIndex = 1;
             this.txb_nome.TabStop = false;
             this.txb_nome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txb_nome.TrailingIcon = null;
@@ -116,7 +120,7 @@
             this.txb_email.SelectionStart = 0;
             this.txb_email.ShortcutsEnabled = true;
             this.txb_email.Size = new System.Drawing.Size(370, 48);
-            this.txb_email.TabIndex = 4;
+            this.txb_email.TabIndex = 2;
             this.txb_email.TabStop = false;
             this.txb_email.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txb_email.TrailingIcon = null;
@@ -135,7 +139,7 @@
             this.txb_senha.MaxLength = 32767;
             this.txb_senha.MouseState = MaterialSkin.MouseState.OUT;
             this.txb_senha.Name = "txb_senha";
-            this.txb_senha.PasswordChar = '\0';
+            this.txb_senha.PasswordChar = '●';
             this.txb_senha.PrefixSuffixText = null;
             this.txb_senha.ReadOnly = false;
             this.txb_senha.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -198,7 +202,7 @@
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.NoAccentTextColor = System.Drawing.Color.Empty;
             this.btnSalvar.Size = new System.Drawing.Size(76, 36);
-            this.btnSalvar.TabIndex = 12;
+            this.btnSalvar.TabIndex = 6;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnSalvar.UseAccentColor = false;
@@ -260,7 +264,7 @@
             this.txb_login.SelectionStart = 0;
             this.txb_login.ShortcutsEnabled = true;
             this.txb_login.Size = new System.Drawing.Size(370, 48);
-            this.txb_login.TabIndex = 16;
+            this.txb_login.TabIndex = 4;
             this.txb_login.TabStop = false;
             this.txb_login.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txb_login.TrailingIcon = null;
@@ -277,26 +281,12 @@
             this.label4.TabIndex = 17;
             this.label4.Text = "Login";
             // 
-            // materialSwitch1
-            // 
-            this.materialSwitch1.AutoSize = true;
-            this.materialSwitch1.Depth = 0;
-            this.materialSwitch1.Location = new System.Drawing.Point(784, 284);
-            this.materialSwitch1.Margin = new System.Windows.Forms.Padding(0);
-            this.materialSwitch1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialSwitch1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSwitch1.Name = "materialSwitch1";
-            this.materialSwitch1.Ripple = true;
-            this.materialSwitch1.Size = new System.Drawing.Size(58, 37);
-            this.materialSwitch1.TabIndex = 19;
-            this.materialSwitch1.UseVisualStyleBackColor = true;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(477, 130);
+            this.label5.Location = new System.Drawing.Point(526, 130);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(33, 29);
             this.label5.TabIndex = 20;
@@ -315,7 +305,7 @@
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.NoAccentTextColor = System.Drawing.Color.Empty;
             this.btnAlterar.Size = new System.Drawing.Size(84, 36);
-            this.btnAlterar.TabIndex = 23;
+            this.btnAlterar.TabIndex = 7;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnAlterar.UseAccentColor = false;
@@ -335,7 +325,7 @@
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.NoAccentTextColor = System.Drawing.Color.Empty;
             this.btnCadastrar.Size = new System.Drawing.Size(106, 36);
-            this.btnCadastrar.TabIndex = 24;
+            this.btnCadastrar.TabIndex = 8;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnCadastrar.UseAccentColor = false;
@@ -360,6 +350,7 @@
             this.txbNivelUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.txbNivelUsuario.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txbNivelUsuario.Depth = 0;
+            this.txbNivelUsuario.Enabled = false;
             this.txbNivelUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txbNivelUsuario.HideSelection = true;
             this.txbNivelUsuario.LeadingIcon = null;
@@ -376,11 +367,44 @@
             this.txbNivelUsuario.SelectionStart = 0;
             this.txbNivelUsuario.ShortcutsEnabled = true;
             this.txbNivelUsuario.Size = new System.Drawing.Size(370, 48);
-            this.txbNivelUsuario.TabIndex = 26;
+            this.txbNivelUsuario.TabIndex = 3;
             this.txbNivelUsuario.TabStop = false;
             this.txbNivelUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txbNivelUsuario.TrailingIcon = null;
             this.txbNivelUsuario.UseSystemPasswordChar = false;
+            // 
+            // picMostrar
+            // 
+            this.picMostrar.Image = global::Projeto_tcc.Properties.Resources.visiblePassword;
+            this.picMostrar.Location = new System.Drawing.Point(817, 334);
+            this.picMostrar.Name = "picMostrar";
+            this.picMostrar.Size = new System.Drawing.Size(25, 25);
+            this.picMostrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMostrar.TabIndex = 28;
+            this.picMostrar.TabStop = false;
+            this.picMostrar.Click += new System.EventHandler(this.picMostrar_Click);
+            // 
+            // picOcultar
+            // 
+            this.picOcultar.Image = global::Projeto_tcc.Properties.Resources.invisiblePassword;
+            this.picOcultar.Location = new System.Drawing.Point(817, 334);
+            this.picOcultar.Name = "picOcultar";
+            this.picOcultar.Size = new System.Drawing.Size(25, 25);
+            this.picOcultar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picOcultar.TabIndex = 30;
+            this.picOcultar.TabStop = false;
+            this.picOcultar.Click += new System.EventHandler(this.picOcultar_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.Control;
+            this.label7.Location = new System.Drawing.Point(478, 130);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(42, 29);
+            this.label7.TabIndex = 31;
+            this.label7.Text = "ID:";
             // 
             // Perfil
             // 
@@ -388,12 +412,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(885, 612);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.txbNivelUsuario);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.materialSwitch1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txb_login);
             this.Controls.Add(this.label3);
@@ -403,15 +427,19 @@
             this.Controls.Add(this.lbltema);
             this.Controls.Add(this.lblDash);
             this.Controls.Add(this.btnfoto);
-            this.Controls.Add(this.txb_senha);
             this.Controls.Add(this.txb_email);
             this.Controls.Add(this.txb_nome);
             this.Controls.Add(this.switchTema);
+            this.Controls.Add(this.picMostrar);
+            this.Controls.Add(this.picOcultar);
+            this.Controls.Add(this.txb_senha);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Perfil";
             this.Text = "Perfil";
             this.Load += new System.EventHandler(this.Perfil_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnfoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMostrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picOcultar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -421,7 +449,6 @@
         private MaterialSkin.Controls.MaterialSwitch switchTema;
         private MaterialSkin.Controls.MaterialTextBox2 txb_nome;
         private MaterialSkin.Controls.MaterialTextBox2 txb_email;
-        private MaterialSkin.Controls.MaterialTextBox2 txb_senha;
         private System.Windows.Forms.PictureBox btnfoto;
         private System.Windows.Forms.Label lblDash;
         private System.Windows.Forms.Label lbltema;
@@ -431,11 +458,14 @@
         private System.Windows.Forms.Label label3;
         private MaterialSkin.Controls.MaterialTextBox2 txb_login;
         private System.Windows.Forms.Label label4;
-        private MaterialSkin.Controls.MaterialSwitch materialSwitch1;
         private System.Windows.Forms.Label label5;
         private MaterialSkin.Controls.MaterialButton btnAlterar;
         public MaterialSkin.Controls.MaterialButton btnCadastrar;
         private System.Windows.Forms.Label label6;
         private MaterialSkin.Controls.MaterialTextBox2 txbNivelUsuario;
+        public MaterialSkin.Controls.MaterialTextBox2 txb_senha;
+        private System.Windows.Forms.PictureBox picMostrar;
+        private System.Windows.Forms.PictureBox picOcultar;
+        private System.Windows.Forms.Label label7;
     }
 }

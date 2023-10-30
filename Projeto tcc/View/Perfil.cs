@@ -32,10 +32,8 @@ namespace Projeto_tcc
         }
         public Perfil(string login) : this()
         {
-
             this.login_usuario = login;
             CarregarDadosUsuario();
-
         }
 
         private void CarregarDadosUsuario()
@@ -47,12 +45,12 @@ namespace Projeto_tcc
             txb_email.Enabled = false;
             */
 
-            UsuariosInfo usuario = new UsuariosInfo();
-            List<UsuariosInfo> usuariosInfos = usuariosRepository.findAll();
+            Usuarios usuario = new Usuarios();
+            List<Usuarios> usuariosInfos = usuariosRepository.findAll();
 
-            foreach (UsuariosInfo user in usuariosInfos)
+            foreach (Usuarios user in usuariosInfos)
             {
-                if(user.login_usuario == login_usuario)
+                if (user.login_usuario == login_usuario)
                 {
                     usuario = user;
                 }
@@ -61,9 +59,10 @@ namespace Projeto_tcc
             if (usuario.nivel_usuario == "Admin")
             {
                 btnCadastrar.Visible = true;
+                txbNivelUsuario.Enabled = true;
             }
             btnfoto.Image = System.Drawing.Image.FromFile(usuario.imagem_data);
-         
+
 
             if (usuario.login_usuario == null)
             {
@@ -112,7 +111,7 @@ namespace Projeto_tcc
 
         private void materialTextBox1_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnfoto_Click(object sender, EventArgs e)
@@ -141,7 +140,8 @@ namespace Projeto_tcc
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            UsuariosInfo usuario = new UsuariosInfo();
+            //Tirar essa lógica e colocar o Update, no lugar do Alterar.
+            Usuarios usuario = new Usuarios();
             usuario.login_usuario = txb_login.Text;
             usuario.senha_usuario = txb_senha.Text;
             usuario.nome_usuario = txb_nome.Text;
@@ -151,7 +151,7 @@ namespace Projeto_tcc
             try
             {
                 usuariosRepository.insert(usuario);
-                MessageBox.Show("Registro Salvo!", "Salvo", MessageBoxButtons.OK, MessageBoxIcon.Information);               
+                MessageBox.Show("Registro Salvo!", "Salvo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             catch (Exception ex)
@@ -162,7 +162,7 @@ namespace Projeto_tcc
 
         private void materialButton2_Click(object sender, EventArgs e)
         {
-             
+
         }
 
         private void btn_Exibir_Click(object sender, EventArgs e)
@@ -177,7 +177,7 @@ namespace Projeto_tcc
             txb_nome.Enabled = true;
             txb_email.Enabled = true;
 
-            UsuariosInfo usuario = new UsuariosInfo();
+            Usuarios usuario = new Usuarios();
             usuario.login_usuario = txb_login.Text;
             usuario.senha_usuario = txb_senha.Text;
             usuario.nome_usuario = txb_nome.Text;
@@ -188,9 +188,9 @@ namespace Projeto_tcc
             try
             {
                 usuariosRepository.update(usuario);
-                MessageBox.Show("foi carai");
+                MessageBox.Show("Dados alterados com sucesso!");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Erro" + ex);
             }
@@ -205,6 +205,23 @@ namespace Projeto_tcc
         {
             Cadastro cadastro = new Cadastro();
             cadastro.Show();
+        }
+
+        private void materialSwitch1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picOcultar_Click(object sender, EventArgs e)
+        {
+            picMostrar.BringToFront();
+            txb_senha.PasswordChar = (txb_senha.PasswordChar == '\0') ? '●' : txb_senha.PasswordChar;
+        }
+
+        private void picMostrar_Click(object sender, EventArgs e)
+        {
+            picOcultar.BringToFront();
+            txb_senha.PasswordChar = (txb_senha.PasswordChar == '●') ? '\0' : '●';
         }
     }
 }

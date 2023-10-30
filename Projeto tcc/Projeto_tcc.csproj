@@ -102,7 +102,7 @@
     <Compile Include="DB\ConnectionDB.cs" />
     <Compile Include="Model\dao\IUsuarios.cs" />
     <Compile Include="Model\Repository\UsuariosRepository.cs" />
-    <Compile Include="Model\entities\Usuario.cs" />
+    <Compile Include="Model\entities\Usuarios.cs" />
     <Compile Include="View\Cadastro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +176,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -191,7 +192,18 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\invisiblePassword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\visiblePassword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoutIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoutIcon1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
