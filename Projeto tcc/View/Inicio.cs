@@ -40,13 +40,7 @@ namespace Projeto_tcc
 
         private void switchLigar_CheckedChanged(object sender, EventArgs e)
         {
-            if (switchLigar.Checked) 
-            {
-                lbltxt3.Text = "Desligar";
-            }else 
-            { 
-                lbltxt3.Text = "Ligar"; 
-            }
+           
         }
     }
 }

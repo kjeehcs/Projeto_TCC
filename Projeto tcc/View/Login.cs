@@ -13,6 +13,7 @@ using Projeto_tcc.Repository;
 using Projeto_tcc.View;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using Npgsql.Internal.TypeHandlers.LTreeHandlers;
+using System.Net.Http;
 
 namespace Projeto_tcc.View
 {
@@ -20,9 +21,10 @@ namespace Projeto_tcc.View
     {
         private UsuariosRepository usoRep = new UsuariosRepository();
 
-
+        // Substitua 'SUA_RAW_API_TOKEN_AQUI' pelo seu token Pi-hole
+        string apiToken = "0f1c0a417cb4a3c4648d38f67d4ff43346ce6ebb0e1ce54e61193808fb236ca3";
+        string apiUrl = "http://172.20.10.9/admin/api.php"; // Substitua pelo IP do seu Raspberry
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-
 
         private static extern IntPtr CreateRoundRectRgn
             (
@@ -45,9 +47,10 @@ namespace Projeto_tcc.View
         {
 
         }
-        private void btnEntrar_Click(object sender, EventArgs e)
+        private async void btnEntrar_Click(object sender, EventArgs e)
         {
             btnEntrar.BackColor = Color.FromArgb(45, 51, 73);
+
 
             string login = Convert.ToString(txb_user_login.Text);
             string senha = Convert.ToString(txb_user_senha.Text);
@@ -78,6 +81,7 @@ namespace Projeto_tcc.View
                 txb_user_login.Focus();
 
             }
+            
         }
 
         private void Fechar_Click(object sender, EventArgs e)
@@ -106,5 +110,7 @@ namespace Projeto_tcc.View
             picMostrar.BringToFront();
             txb_user_senha.PasswordChar = (txb_user_senha.PasswordChar == '\0') ? '●' : txb_user_senha.PasswordChar;
         }
+        
+
     }
 }
