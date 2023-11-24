@@ -92,14 +92,7 @@ namespace Projeto_tcc
 
         private void switchTema_CheckedChanged(object sender, EventArgs e)
         {
-            if (switchTema.Checked)
-            {
-                lbltema.Text = "Tema Escuro";
-            }
-            else
-            {
-                lbltema.Text = "Tema Claro";
-            }
+           
         }
 
         private void materialTextBox21_Click(object sender, EventArgs e)

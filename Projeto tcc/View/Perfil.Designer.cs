@@ -28,13 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.switchTema = new MaterialSkin.Controls.MaterialSwitch();
             this.txb_nome = new MaterialSkin.Controls.MaterialTextBox2();
             this.txb_email = new MaterialSkin.Controls.MaterialTextBox2();
             this.txb_senha = new MaterialSkin.Controls.MaterialTextBox2();
             this.btnfoto = new System.Windows.Forms.PictureBox();
             this.lblDash = new System.Windows.Forms.Label();
-            this.lbltema = new System.Windows.Forms.Label();
             this.btnSalvar = new MaterialSkin.Controls.MaterialButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,21 +51,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picMostrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOcultar)).BeginInit();
             this.SuspendLayout();
-            // 
-            // switchTema
-            // 
-            this.switchTema.AutoSize = true;
-            this.switchTema.Depth = 0;
-            this.switchTema.Location = new System.Drawing.Point(766, 47);
-            this.switchTema.Margin = new System.Windows.Forms.Padding(0);
-            this.switchTema.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.switchTema.MouseState = MaterialSkin.MouseState.HOVER;
-            this.switchTema.Name = "switchTema";
-            this.switchTema.Ripple = true;
-            this.switchTema.Size = new System.Drawing.Size(58, 37);
-            this.switchTema.TabIndex = 1;
-            this.switchTema.UseVisualStyleBackColor = true;
-            this.switchTema.CheckedChanged += new System.EventHandler(this.switchTema_CheckedChanged);
             // 
             // txb_nome
             // 
@@ -176,18 +159,6 @@
             this.lblDash.Size = new System.Drawing.Size(102, 42);
             this.lblDash.TabIndex = 9;
             this.lblDash.Text = "Perfil";
-            // 
-            // lbltema
-            // 
-            this.lbltema.AutoSize = true;
-            this.lbltema.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltema.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbltema.Location = new System.Drawing.Point(568, 50);
-            this.lbltema.Name = "lbltema";
-            this.lbltema.Size = new System.Drawing.Size(140, 29);
-            this.lbltema.TabIndex = 10;
-            this.lbltema.Text = "Tema Claro";
-            this.lbltema.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnSalvar
             // 
@@ -424,12 +395,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.lbltema);
             this.Controls.Add(this.lblDash);
             this.Controls.Add(this.btnfoto);
             this.Controls.Add(this.txb_email);
             this.Controls.Add(this.txb_nome);
-            this.Controls.Add(this.switchTema);
             this.Controls.Add(this.picMostrar);
             this.Controls.Add(this.picOcultar);
             this.Controls.Add(this.txb_senha);
@@ -446,12 +415,10 @@
         }
 
         #endregion
-        private MaterialSkin.Controls.MaterialSwitch switchTema;
         private MaterialSkin.Controls.MaterialTextBox2 txb_nome;
         private MaterialSkin.Controls.MaterialTextBox2 txb_email;
         private System.Windows.Forms.PictureBox btnfoto;
         private System.Windows.Forms.Label lblDash;
-        private System.Windows.Forms.Label lbltema;
         private MaterialSkin.Controls.MaterialButton btnSalvar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Listas));
             this.materialTextBox21 = new MaterialSkin.Controls.MaterialTextBox2();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridBlackList = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblDash = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridBlackList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -70,15 +70,25 @@
             this.materialTextBox21.TrailingIcon = null;
             this.materialTextBox21.UseSystemPasswordChar = false;
             // 
-            // dataGridView1
+            // dataGridBlackList
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(30, 185);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(827, 376);
-            this.dataGridView1.TabIndex = 1;
+            this.dataGridBlackList.AllowUserToAddRows = false;
+            this.dataGridBlackList.AllowUserToDeleteRows = false;
+            this.dataGridBlackList.AllowUserToResizeColumns = false;
+            this.dataGridBlackList.AllowUserToResizeRows = false;
+            this.dataGridBlackList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridBlackList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridBlackList.ColumnHeadersHeight = 29;
+            this.dataGridBlackList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridBlackList.Location = new System.Drawing.Point(89, 196);
+            this.dataGridBlackList.Name = "dataGridBlackList";
+            this.dataGridBlackList.ReadOnly = true;
+            this.dataGridBlackList.RowHeadersWidth = 51;
+            this.dataGridBlackList.RowTemplate.Height = 24;
+            this.dataGridBlackList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridBlackList.Size = new System.Drawing.Size(688, 321);
+            this.dataGridBlackList.TabIndex = 1;
+            this.dataGridBlackList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // pictureBox1
             // 
@@ -95,11 +105,11 @@
             // lblDash
             // 
             this.lblDash.AutoSize = true;
-            this.lblDash.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDash.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDash.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.lblDash.Location = new System.Drawing.Point(22, 22);
             this.lblDash.Name = "lblDash";
-            this.lblDash.Size = new System.Drawing.Size(166, 44);
+            this.lblDash.Size = new System.Drawing.Size(168, 42);
             this.lblDash.TabIndex = 8;
             this.lblDash.Text = "BlackList";
             // 
@@ -128,11 +138,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.label1.Location = new System.Drawing.Point(84, 138);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 27);
+            this.label1.Size = new System.Drawing.Size(66, 29);
             this.label1.TabIndex = 11;
             this.label1.Text = "URL:";
             // 
@@ -147,13 +157,13 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.lblDash);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridBlackList);
             this.Controls.Add(this.materialTextBox21);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Listas";
             this.Text = "Listas";
             this.Load += new System.EventHandler(this.Listas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridBlackList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -165,7 +175,7 @@
         #endregion
 
         private MaterialSkin.Controls.MaterialTextBox2 materialTextBox21;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridBlackList;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblDash;
         private System.Windows.Forms.PictureBox pictureBox2;

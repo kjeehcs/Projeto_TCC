@@ -110,7 +110,10 @@ namespace Projeto_tcc.View
             picMostrar.BringToFront();
             txb_user_senha.PasswordChar = (txb_user_senha.PasswordChar == '\0') ? '●' : txb_user_senha.PasswordChar;
         }
-        
 
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
