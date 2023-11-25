@@ -37,6 +37,16 @@ namespace Projeto_tcc.DB
             return dr;
         }
 
+        public static NpgsqlDataReader Reader(NpgsqlCommand command)
+        {
+            NpgsqlConnection con = Connection();
+            command.Connection = con;
+            NpgsqlDataReader dr = command.ExecuteReader();
+            return dr;
+        }
+
+
+
 
     }
 }

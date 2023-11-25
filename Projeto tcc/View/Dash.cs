@@ -17,8 +17,8 @@ namespace Projeto_tcc
 {
     public partial class Dash : Form
     {
-        // Substitua 'SUA_RAW_API_TOKEN_AQUI' pelo seu token Pi-hole
-        string apiToken = "0f1c0a417cb4a3c4648d38f67d4ff43346ce6ebb0e1ce54e61193808fb236ca3";
+        
+        //string apiToken = "0f1c0a417cb4a3c4648d38f67d4ff43346ce6ebb0e1ce54e61193808fb236ca3";
         string apiUrl = "http://192.168.0.103/admin/api.php?summary&auth=0f1c0a417cb4a3c4648d38f67d4ff43346ce6ebb0e1ce54e61193808fb236ca3"; // Substitua pelo IP do seu Raspberry
 
         public Dash()

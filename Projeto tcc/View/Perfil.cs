@@ -29,6 +29,7 @@ namespace Projeto_tcc
         public Perfil()
         {
             InitializeComponent();
+          
         }
         public Perfil(string login) : this()
         {
@@ -38,12 +39,13 @@ namespace Projeto_tcc
 
         private void CarregarDadosUsuario()
         {
-            /*
+            
             txb_login.Enabled = false;
             txb_senha.Enabled = false;
             txb_nome.Enabled = false;
             txb_email.Enabled = false;
-            */
+            txbNivelUsuario.Enabled = false;
+
 
             Usuarios usuario = new Usuarios();
             List<Usuarios> usuariosInfos = usuariosRepository.findAll();
@@ -59,7 +61,6 @@ namespace Projeto_tcc
             if (usuario.nivel_usuario == "Admin")
             {
                 btnCadastrar.Visible = true;
-                txbNivelUsuario.Enabled = true;
             }
             btnfoto.Image = System.Drawing.Image.FromFile(usuario.imagem_data);
 
@@ -128,23 +129,35 @@ namespace Projeto_tcc
 
                 }
             }
-            MessageBox.Show(caminhoDaImagem);
+            
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            //Tirar essa lógica e colocar o Update, no lugar do Alterar.
+            
             Usuarios usuario = new Usuarios();
             usuario.login_usuario = txb_login.Text;
             usuario.senha_usuario = txb_senha.Text;
             usuario.nome_usuario = txb_nome.Text;
             usuario.email_usuario = txb_email.Text;
             usuario.imagem_data = caminhoDaImagem;
+            usuario.id_usuario = Convert.ToInt32(label5.Text);
+
+
+            if (string.IsNullOrEmpty(usuario.imagem_data))
+            {
+                Usuarios usuarioExistente = usuariosRepository.findById(usuario.id_usuario);
+
+                if (usuarioExistente != null)
+                {
+                    usuario.imagem_data = usuarioExistente.imagem_data;
+                }
+            }
 
             try
             {
-                usuariosRepository.insert(usuario);
-                MessageBox.Show("Registro Salvo!", "Salvo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                usuariosRepository.update(usuario);
+                MessageBox.Show("Dados atualizados!", "Salvo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             catch (Exception ex)
@@ -170,7 +183,7 @@ namespace Projeto_tcc
             txb_nome.Enabled = true;
             txb_email.Enabled = true;
 
-            Usuarios usuario = new Usuarios();
+            /*Usuarios usuario = new Usuarios();
             usuario.login_usuario = txb_login.Text;
             usuario.senha_usuario = txb_senha.Text;
             usuario.nome_usuario = txb_nome.Text;
@@ -186,7 +199,7 @@ namespace Projeto_tcc
             catch (Exception ex)
             {
                 MessageBox.Show("Erro" + ex);
-            }
+            }*/
         }
 
         private void Perfil_Load(object sender, EventArgs e)

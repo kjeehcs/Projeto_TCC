@@ -43,10 +43,10 @@
             this.btnAlterar = new MaterialSkin.Controls.MaterialButton();
             this.btnCadastrar = new MaterialSkin.Controls.MaterialButton();
             this.label6 = new System.Windows.Forms.Label();
-            this.txbNivelUsuario = new MaterialSkin.Controls.MaterialTextBox2();
             this.picMostrar = new System.Windows.Forms.PictureBox();
             this.picOcultar = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.txbNivelUsuario = new MaterialSkin.Controls.MaterialTextBox2();
             ((System.ComponentModel.ISupportInitialize)(this.btnfoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMostrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOcultar)).BeginInit();
@@ -61,7 +61,8 @@
             this.txb_nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txb_nome.HideSelection = true;
             this.txb_nome.LeadingIcon = null;
-            this.txb_nome.Location = new System.Drawing.Point(35, 220);
+            this.txb_nome.Location = new System.Drawing.Point(26, 179);
+            this.txb_nome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txb_nome.MaxLength = 32767;
             this.txb_nome.MouseState = MaterialSkin.MouseState.OUT;
             this.txb_nome.Name = "txb_nome";
@@ -73,7 +74,7 @@
             this.txb_nome.SelectionLength = 0;
             this.txb_nome.SelectionStart = 0;
             this.txb_nome.ShortcutsEnabled = true;
-            this.txb_nome.Size = new System.Drawing.Size(370, 48);
+            this.txb_nome.Size = new System.Drawing.Size(278, 48);
             this.txb_nome.TabIndex = 1;
             this.txb_nome.TabStop = false;
             this.txb_nome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -90,7 +91,8 @@
             this.txb_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txb_email.HideSelection = true;
             this.txb_email.LeadingIcon = null;
-            this.txb_email.Location = new System.Drawing.Point(34, 311);
+            this.txb_email.Location = new System.Drawing.Point(26, 257);
+            this.txb_email.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txb_email.MaxLength = 32767;
             this.txb_email.MouseState = MaterialSkin.MouseState.OUT;
             this.txb_email.Name = "txb_email";
@@ -102,7 +104,7 @@
             this.txb_email.SelectionLength = 0;
             this.txb_email.SelectionStart = 0;
             this.txb_email.ShortcutsEnabled = true;
-            this.txb_email.Size = new System.Drawing.Size(370, 48);
+            this.txb_email.Size = new System.Drawing.Size(278, 48);
             this.txb_email.TabIndex = 2;
             this.txb_email.TabStop = false;
             this.txb_email.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -118,7 +120,8 @@
             this.txb_senha.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txb_senha.HideSelection = true;
             this.txb_senha.LeadingIcon = null;
-            this.txb_senha.Location = new System.Drawing.Point(472, 324);
+            this.txb_senha.Location = new System.Drawing.Point(354, 257);
+            this.txb_senha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txb_senha.MaxLength = 32767;
             this.txb_senha.MouseState = MaterialSkin.MouseState.OUT;
             this.txb_senha.Name = "txb_senha";
@@ -130,7 +133,7 @@
             this.txb_senha.SelectionLength = 0;
             this.txb_senha.SelectionStart = 0;
             this.txb_senha.ShortcutsEnabled = true;
-            this.txb_senha.Size = new System.Drawing.Size(370, 48);
+            this.txb_senha.Size = new System.Drawing.Size(278, 48);
             this.txb_senha.TabIndex = 5;
             this.txb_senha.TabStop = false;
             this.txb_senha.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -141,9 +144,10 @@
             // 
             this.btnfoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnfoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnfoto.Location = new System.Drawing.Point(131, 74);
+            this.btnfoto.Location = new System.Drawing.Point(98, 60);
+            this.btnfoto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnfoto.Name = "btnfoto";
-            this.btnfoto.Size = new System.Drawing.Size(133, 109);
+            this.btnfoto.Size = new System.Drawing.Size(100, 89);
             this.btnfoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnfoto.TabIndex = 6;
             this.btnfoto.TabStop = false;
@@ -154,9 +158,10 @@
             this.lblDash.AutoSize = true;
             this.lblDash.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDash.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lblDash.Location = new System.Drawing.Point(27, 24);
+            this.lblDash.Location = new System.Drawing.Point(20, 20);
+            this.lblDash.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDash.Name = "lblDash";
-            this.lblDash.Size = new System.Drawing.Size(102, 42);
+            this.lblDash.Size = new System.Drawing.Size(83, 36);
             this.lblDash.TabIndex = 9;
             this.lblDash.Text = "Perfil";
             // 
@@ -167,8 +172,8 @@
             this.btnSalvar.Depth = 0;
             this.btnSalvar.HighEmphasis = true;
             this.btnSalvar.Icon = null;
-            this.btnSalvar.Location = new System.Drawing.Point(188, 526);
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnSalvar.Location = new System.Drawing.Point(141, 427);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnSalvar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -185,9 +190,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(39, 188);
+            this.label1.Location = new System.Drawing.Point(22, 153);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 29);
+            this.label1.Size = new System.Drawing.Size(62, 24);
             this.label1.TabIndex = 13;
             this.label1.Text = "Nome";
             // 
@@ -196,9 +202,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(38, 279);
+            this.label2.Location = new System.Drawing.Point(22, 231);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 29);
+            this.label2.Size = new System.Drawing.Size(63, 24);
             this.label2.TabIndex = 14;
             this.label2.Text = "E-mail";
             // 
@@ -207,9 +214,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(477, 292);
+            this.label3.Location = new System.Drawing.Point(350, 231);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 29);
+            this.label3.Size = new System.Drawing.Size(65, 24);
             this.label3.TabIndex = 15;
             this.label3.Text = "Senha";
             // 
@@ -222,7 +230,8 @@
             this.txb_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txb_login.HideSelection = true;
             this.txb_login.LeadingIcon = null;
-            this.txb_login.Location = new System.Drawing.Point(472, 220);
+            this.txb_login.Location = new System.Drawing.Point(354, 179);
+            this.txb_login.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txb_login.MaxLength = 32767;
             this.txb_login.MouseState = MaterialSkin.MouseState.OUT;
             this.txb_login.Name = "txb_login";
@@ -234,7 +243,7 @@
             this.txb_login.SelectionLength = 0;
             this.txb_login.SelectionStart = 0;
             this.txb_login.ShortcutsEnabled = true;
-            this.txb_login.Size = new System.Drawing.Size(370, 48);
+            this.txb_login.Size = new System.Drawing.Size(278, 48);
             this.txb_login.TabIndex = 4;
             this.txb_login.TabStop = false;
             this.txb_login.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -246,9 +255,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(479, 188);
+            this.label4.Location = new System.Drawing.Point(350, 153);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 29);
+            this.label4.Size = new System.Drawing.Size(57, 24);
             this.label4.TabIndex = 17;
             this.label4.Text = "Login";
             // 
@@ -257,9 +267,10 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(526, 130);
+            this.label5.Location = new System.Drawing.Point(386, 106);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(33, 29);
+            this.label5.Size = new System.Drawing.Size(25, 24);
             this.label5.TabIndex = 20;
             this.label5.Text = "id";
             // 
@@ -270,8 +281,8 @@
             this.btnAlterar.Depth = 0;
             this.btnAlterar.HighEmphasis = true;
             this.btnAlterar.Icon = null;
-            this.btnAlterar.Location = new System.Drawing.Point(364, 526);
-            this.btnAlterar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnAlterar.Location = new System.Drawing.Point(283, 427);
+            this.btnAlterar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnAlterar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -290,8 +301,8 @@
             this.btnCadastrar.Depth = 0;
             this.btnCadastrar.HighEmphasis = true;
             this.btnCadastrar.Icon = null;
-            this.btnCadastrar.Location = new System.Drawing.Point(573, 526);
-            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnCadastrar.Location = new System.Drawing.Point(418, 427);
+            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnCadastrar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -309,11 +320,48 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(39, 379);
+            this.label6.Location = new System.Drawing.Point(22, 313);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(157, 29);
+            this.label6.Size = new System.Drawing.Size(121, 24);
             this.label6.TabIndex = 25;
             this.label6.Text = "Nível Usuário";
+            // 
+            // picMostrar
+            // 
+            this.picMostrar.Image = global::Projeto_tcc.Properties.Resources.visiblePassword;
+            this.picMostrar.Location = new System.Drawing.Point(613, 271);
+            this.picMostrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picMostrar.Name = "picMostrar";
+            this.picMostrar.Size = new System.Drawing.Size(19, 20);
+            this.picMostrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMostrar.TabIndex = 28;
+            this.picMostrar.TabStop = false;
+            this.picMostrar.Click += new System.EventHandler(this.picMostrar_Click);
+            // 
+            // picOcultar
+            // 
+            this.picOcultar.Image = global::Projeto_tcc.Properties.Resources.invisiblePassword;
+            this.picOcultar.Location = new System.Drawing.Point(613, 271);
+            this.picOcultar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picOcultar.Name = "picOcultar";
+            this.picOcultar.Size = new System.Drawing.Size(19, 20);
+            this.picOcultar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picOcultar.TabIndex = 30;
+            this.picOcultar.TabStop = false;
+            this.picOcultar.Click += new System.EventHandler(this.picOcultar_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.Control;
+            this.label7.Location = new System.Drawing.Point(350, 106);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(32, 24);
+            this.label7.TabIndex = 31;
+            this.label7.Text = "ID:";
             // 
             // txbNivelUsuario
             // 
@@ -325,64 +373,32 @@
             this.txbNivelUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txbNivelUsuario.HideSelection = true;
             this.txbNivelUsuario.LeadingIcon = null;
-            this.txbNivelUsuario.Location = new System.Drawing.Point(35, 411);
+            this.txbNivelUsuario.Location = new System.Drawing.Point(26, 339);
+            this.txbNivelUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.txbNivelUsuario.MaxLength = 32767;
             this.txbNivelUsuario.MouseState = MaterialSkin.MouseState.OUT;
             this.txbNivelUsuario.Name = "txbNivelUsuario";
             this.txbNivelUsuario.PasswordChar = '\0';
             this.txbNivelUsuario.PrefixSuffixText = null;
-            this.txbNivelUsuario.ReadOnly = false;
+            this.txbNivelUsuario.ReadOnly = true;
             this.txbNivelUsuario.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txbNivelUsuario.SelectedText = "";
             this.txbNivelUsuario.SelectionLength = 0;
             this.txbNivelUsuario.SelectionStart = 0;
             this.txbNivelUsuario.ShortcutsEnabled = true;
-            this.txbNivelUsuario.Size = new System.Drawing.Size(370, 48);
+            this.txbNivelUsuario.Size = new System.Drawing.Size(278, 48);
             this.txbNivelUsuario.TabIndex = 3;
             this.txbNivelUsuario.TabStop = false;
             this.txbNivelUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txbNivelUsuario.TrailingIcon = null;
             this.txbNivelUsuario.UseSystemPasswordChar = false;
             // 
-            // picMostrar
-            // 
-            this.picMostrar.Image = global::Projeto_tcc.Properties.Resources.visiblePassword;
-            this.picMostrar.Location = new System.Drawing.Point(817, 334);
-            this.picMostrar.Name = "picMostrar";
-            this.picMostrar.Size = new System.Drawing.Size(25, 25);
-            this.picMostrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picMostrar.TabIndex = 28;
-            this.picMostrar.TabStop = false;
-            this.picMostrar.Click += new System.EventHandler(this.picMostrar_Click);
-            // 
-            // picOcultar
-            // 
-            this.picOcultar.Image = global::Projeto_tcc.Properties.Resources.invisiblePassword;
-            this.picOcultar.Location = new System.Drawing.Point(817, 334);
-            this.picOcultar.Name = "picOcultar";
-            this.picOcultar.Size = new System.Drawing.Size(25, 25);
-            this.picOcultar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picOcultar.TabIndex = 30;
-            this.picOcultar.TabStop = false;
-            this.picOcultar.Click += new System.EventHandler(this.picOcultar_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.Control;
-            this.label7.Location = new System.Drawing.Point(478, 130);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(42, 29);
-            this.label7.TabIndex = 31;
-            this.label7.Text = "ID:";
-            // 
             // Perfil
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(885, 612);
+            this.ClientSize = new System.Drawing.Size(664, 497);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txbNivelUsuario);
             this.Controls.Add(this.label6);
@@ -403,6 +419,7 @@
             this.Controls.Add(this.picOcultar);
             this.Controls.Add(this.txb_senha);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Perfil";
             this.Text = "Perfil";
             this.Load += new System.EventHandler(this.Perfil_Load);
@@ -429,10 +446,10 @@
         private MaterialSkin.Controls.MaterialButton btnAlterar;
         public MaterialSkin.Controls.MaterialButton btnCadastrar;
         private System.Windows.Forms.Label label6;
-        private MaterialSkin.Controls.MaterialTextBox2 txbNivelUsuario;
         public MaterialSkin.Controls.MaterialTextBox2 txb_senha;
         private System.Windows.Forms.PictureBox picMostrar;
         private System.Windows.Forms.PictureBox picOcultar;
         private System.Windows.Forms.Label label7;
+        private MaterialSkin.Controls.MaterialTextBox2 txbNivelUsuario;
     }
 }

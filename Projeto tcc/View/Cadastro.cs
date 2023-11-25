@@ -18,8 +18,8 @@ namespace Projeto_tcc.View
         private readonly UsuariosRepository usuariosRepository = new UsuariosRepository();
         public Cadastro()
         {
-            InitializeComponent(); 
-            
+            InitializeComponent();
+
         }
 
         private void btnfotoCadastro_Click(object sender, EventArgs e)
@@ -42,8 +42,9 @@ namespace Projeto_tcc.View
                     btnfotoCadastro.ImageLocation = caminhoDaImagem;
 
                 }
+
             }
-            MessageBox.Show(caminhoDaImagem);
+
 
         }
 
@@ -54,22 +55,28 @@ namespace Projeto_tcc.View
             usuario.senha_usuario = txb_senhaCadastro.Text;
             usuario.nome_usuario = txb_nomeCadastro.Text;
             usuario.email_usuario = txb_emailCadastro.Text;
-            usuario.imagem_data = caminhoDaImagem;
             usuario.nivel_usuario = comboBoxNivelUsuario.Text;
-            
-            
-            
-            try
-            {
-                usuariosRepository.insert(usuario);
-                MessageBox.Show("Registro Salvo!", "Salvo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            }
-            catch (Exception ex)
+            if (string.IsNullOrEmpty(caminhoDaImagem))
             {
-                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, selecione uma imagem!");
             }
-            
+            else
+            {
+                usuario.imagem_data = caminhoDaImagem;
+
+                try
+                {
+                    usuariosRepository.insert(usuario);
+                    MessageBox.Show("Registro Salvo!", "Salvo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Hide();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
         }
 
         private void picMostrar_Click(object sender, EventArgs e)
@@ -86,7 +93,7 @@ namespace Projeto_tcc.View
 
         private void btnFechar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide();
         }
     }
 }

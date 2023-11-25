@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 using Projeto_tcc.Repository;
 using Projeto_tcc.Model;
 using Projeto_tcc.View;
+using System.Reflection.Emit;
 
 namespace Projeto_tcc
 {
@@ -37,7 +38,7 @@ namespace Projeto_tcc
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
             this.login_usuario = login;
             CarregarImagem();
-            
+
         }
         private void CarregarImagem()
         {
@@ -51,8 +52,8 @@ namespace Projeto_tcc
                     usuario = user;
                 }
             }
-            pictureBox4.Image = System.Drawing.Image.FromFile(usuario.imagem_data);
-            label1.Text = usuario.nome_usuario;
+            pictureMain.Image = System.Drawing.Image.FromFile(usuario.imagem_data);
+            lblNomeMain.Text = usuario.nome_usuario;
             labelAdmin.Text = usuario.nivel_usuario;
         }
         private void main_Load(object sender, EventArgs e)
@@ -110,10 +111,31 @@ namespace Projeto_tcc
             AbrirNOPrincipal(new Inicio());
         }
 
+        private void CarregarDadosUsuario()
+        {
+            Usuarios usuario = new Usuarios();
+            List<Usuarios> usuariosInfos = usuariosRepository.findAll();
+
+            foreach (Usuarios user in usuariosInfos)
+            {
+                if (user.login_usuario == login_usuario)
+                {
+                    usuario = user;
+                }
+            }
+
+            pictureMain.Image = System.Drawing.Image.FromFile(usuario.imagem_data);
+
+            lblNomeMain.Text = usuario.nome_usuario;
+        }
+
+
+
         private void btnPerfil_Click(object sender, EventArgs e)
         {
             btnPerfil.BackColor = Color.FromArgb(45, 51, 73);
             AbrirNOPrincipal(new Perfil(login_usuario));
+            CarregarDadosUsuario();
 
         }
 

@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Projeto_tcc.DB;
 using Projeto_tcc.Model;
+using NpgsqlTypes;
 
 namespace Projeto_tcc.Repository
 {
@@ -20,7 +21,7 @@ namespace Projeto_tcc.Repository
                 command.Connection = connection;
                 command.CommandType = System.Data.CommandType.Text;
                 command.CommandText = "SELECT * FROM Usuarios";
-                
+
                 List<Usuarios> usuarios = new List<Usuarios>();
                 NpgsqlDataReader dr = ConnectionDB.Select(command);
                 while (dr.Read())
@@ -33,7 +34,7 @@ namespace Projeto_tcc.Repository
                     usuario.email_usuario = (string)dr["email_usuario"];
                     usuario.nivel_usuario = (string)dr["nivel_usuario"];
                     usuario.imagem_data = (string)dr["imagem_data"];
-                    
+
 
                     usuarios.Add(usuario);
                 }
@@ -55,7 +56,7 @@ namespace Projeto_tcc.Repository
             command.Parameters.AddWithValue("@email_usuario", obj.email_usuario);
             command.Parameters.AddWithValue("@nivel_usuario", obj.nivel_usuario);
             command.Parameters.AddWithValue("@imagem_data", obj.imagem_data);
-            
+
 
             ConnectionDB.CRUD(command);
         }
@@ -76,5 +77,38 @@ namespace Projeto_tcc.Repository
 
             ConnectionDB.CRUD(command);
         }
+
+
+        public Usuarios findById(int id_usuario)
+        {
+            using (NpgsqlConnection connection = ConnectionDB.Connection())
+            {
+                NpgsqlCommand command = new NpgsqlCommand();
+                command.Connection = connection;
+                command.CommandType = System.Data.CommandType.Text;
+                command.CommandText = "SELECT * FROM Usuarios WHERE id_usuario = @id_usuario";
+
+                command.Parameters.AddWithValue("@id_usuario", id_usuario);
+
+                using (NpgsqlDataReader dr = command.ExecuteReader())
+                {
+                    if (dr.Read())
+                    {
+                        return new Usuarios
+                        {
+                            id_usuario = Convert.ToInt32(dr["id_usuario"]),
+                            login_usuario = dr["login"].ToString(),
+                            senha_usuario = dr["senha"].ToString(),
+                            nome_usuario = dr["nome_usuario"].ToString(),
+                            email_usuario = dr["email_usuario"].ToString(),
+                            nivel_usuario = dr["nivel_usuario"].ToString(),
+                            imagem_data = dr["imagem_data"].ToString(),
+                        };
+                    }
+                    return null;
+                }
+            }
+        }
     }
 }
+

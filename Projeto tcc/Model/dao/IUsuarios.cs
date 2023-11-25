@@ -10,8 +10,10 @@ namespace Projeto_tcc.Model
     public interface IUsuarios
     {
         List<Usuarios> findAll();
+        Usuarios findById(int id); // Modificado para retornar um único usuário
         void insert(Usuarios obj);
         void update(Usuarios obj);
+
 
     }
 }

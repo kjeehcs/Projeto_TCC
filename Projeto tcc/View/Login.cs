@@ -81,7 +81,6 @@ namespace Projeto_tcc.View
                 txb_user_login.Focus();
 
             }
-            
         }
 
         private void Fechar_Click(object sender, EventArgs e)
