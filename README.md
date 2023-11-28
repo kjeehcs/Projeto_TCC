@@ -14,7 +14,7 @@ O objetivo principal deste trabalho é criar uma solução acessível e personal
 
 2. **Gerenciamento:** Possibilita o gerenciamento do filtro DNS, facilitando a administração em diferentes cenários.
 
-3. **Configuração Simplificada:** Implementa uma interface amigável para facilitar a configuração inicial e a manutenção contínua do sistema.
+3. **Configuração Simplificada:** Implementa uma interface amigável para facilitar a configuração e personalização.
 
 
 ## Contribuições
