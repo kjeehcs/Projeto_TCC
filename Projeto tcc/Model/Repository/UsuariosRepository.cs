@@ -109,6 +109,24 @@ namespace Projeto_tcc.Repository
                 }
             }
         }
+
+        public bool UserExists(string login, string senha)
+        {
+            using (NpgsqlConnection connection = ConnectionDB.Connection())
+            {
+                NpgsqlCommand command = new NpgsqlCommand();
+                command.Connection = connection;
+                command.CommandType = System.Data.CommandType.Text;
+                command.CommandText = "SELECT COUNT(*) FROM Usuarios WHERE login=@login AND senha=@senha";
+
+                command.Parameters.AddWithValue("@login", login);
+                command.Parameters.AddWithValue("@senha", senha);
+
+                int count = Convert.ToInt32(command.ExecuteScalar());
+
+                return count > 0;
+            }
+        }
     }
 }
 

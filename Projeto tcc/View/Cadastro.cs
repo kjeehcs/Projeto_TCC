@@ -19,7 +19,6 @@ namespace Projeto_tcc.View
         public Cadastro()
         {
             InitializeComponent();
-
         }
 
         private void btnfotoCadastro_Click(object sender, EventArgs e)
@@ -38,43 +37,59 @@ namespace Projeto_tcc.View
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     caminhoDaImagem = openFileDialog.FileName;
-                    // Exibir a imagem na PictureBox
+
                     btnfotoCadastro.ImageLocation = caminhoDaImagem;
 
                 }
 
             }
-
-
         }
 
         private void btnSalvarCadastro_Click(object sender, EventArgs e)
         {
-            Usuarios usuario = new Usuarios();
-            usuario.login_usuario = txb_loginCadastro.Text;
-            usuario.senha_usuario = txb_senhaCadastro.Text;
-            usuario.nome_usuario = txb_nomeCadastro.Text;
-            usuario.email_usuario = txb_emailCadastro.Text;
-            usuario.nivel_usuario = comboBoxNivelUsuario.Text;
-
-            if (string.IsNullOrEmpty(caminhoDaImagem))
+            if (string.IsNullOrWhiteSpace(txb_loginCadastro.Text) ||
+                string.IsNullOrWhiteSpace(txb_senhaCadastro.Text) ||
+                string.IsNullOrWhiteSpace(txb_nomeCadastro.Text) ||
+                string.IsNullOrWhiteSpace(txb_emailCadastro.Text) ||
+                string.IsNullOrWhiteSpace(comboBoxNivelUsuario.Text))
             {
-                MessageBox.Show("Por favor, selecione uma imagem!");
+                MessageBox.Show("Por favor, preencha todos os campos obrigatórios!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                usuario.imagem_data = caminhoDaImagem;
-
-                try
+                // Verificar se o usuário já existe no banco de dados
+                if (usuariosRepository.UserExists(txb_loginCadastro.Text, txb_senhaCadastro.Text))
                 {
-                    usuariosRepository.insert(usuario);
-                    MessageBox.Show("Registro Salvo!", "Salvo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Hide();
-
+                    MessageBox.Show("Já existe um usuário com o mesmo login!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Usuarios usuario = new Usuarios();
+                    usuario.login_usuario = txb_loginCadastro.Text;
+                    usuario.senha_usuario = txb_senhaCadastro.Text;
+                    usuario.nome_usuario = txb_nomeCadastro.Text;
+                    usuario.email_usuario = txb_emailCadastro.Text;
+                    usuario.nivel_usuario = comboBoxNivelUsuario.Text;
+
+                    if (string.IsNullOrEmpty(caminhoDaImagem))
+                    {
+                        MessageBox.Show("Por favor, selecione uma imagem!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        usuario.imagem_data = caminhoDaImagem;
+
+                        try
+                        {
+                            usuariosRepository.insert(usuario);
+                            MessageBox.Show("Registro Salvo!", "Salvo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Hide();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
                 }
             }
         }
@@ -94,6 +109,11 @@ namespace Projeto_tcc.View
         private void btnFechar_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void Cadastro_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

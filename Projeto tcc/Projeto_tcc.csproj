@@ -103,7 +103,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DB\ConnectionDB.cs" />
-    <Compile Include="HttpCliente.cs" />
     <Compile Include="Model\dao\IUsuarios.cs" />
     <Compile Include="Model\Repository\UsuariosRepository.cs" />
     <Compile Include="Model\entities\Usuarios.cs" />

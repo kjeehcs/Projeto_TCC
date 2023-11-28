@@ -37,10 +37,5 @@ namespace Projeto_tcc
         {
 
         }
-
-        private void switchLigar_CheckedChanged(object sender, EventArgs e)
-        {
-           
-        }
     }
 }

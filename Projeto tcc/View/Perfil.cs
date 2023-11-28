@@ -45,6 +45,7 @@ namespace Projeto_tcc
             txb_nome.Enabled = false;
             txb_email.Enabled = false;
             txbNivelUsuario.Enabled = false;
+            btnfoto.Enabled = false;
 
 
             Usuarios usuario = new Usuarios();
@@ -67,7 +68,7 @@ namespace Projeto_tcc
 
             if (usuario.login_usuario == null)
             {
-                MessageBox.Show("Cliente não encontrado!");
+                MessageBox.Show("Usuário não encontrado!");
             }
             else
             {
@@ -82,7 +83,7 @@ namespace Projeto_tcc
                 }
                 else
                 {
-                    MessageBox.Show("Dados do cliente não disponíveis!");
+                    MessageBox.Show("Dados do usuário não disponíveis!");
                 }
             }
         }
@@ -124,7 +125,6 @@ namespace Projeto_tcc
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     caminhoDaImagem = openFileDialog.FileName;
-                    // Exibir a imagem na PictureBox
                     btnfoto.ImageLocation = caminhoDaImagem;
 
                 }
@@ -182,24 +182,8 @@ namespace Projeto_tcc
             txb_senha.Enabled = true;
             txb_nome.Enabled = true;
             txb_email.Enabled = true;
+            btnfoto.Enabled = true;
 
-            /*Usuarios usuario = new Usuarios();
-            usuario.login_usuario = txb_login.Text;
-            usuario.senha_usuario = txb_senha.Text;
-            usuario.nome_usuario = txb_nome.Text;
-            usuario.email_usuario = txb_email.Text;
-            usuario.imagem_data = caminhoDaImagem;
-            usuario.id_usuario = Convert.ToInt32(label5.Text);
-
-            try
-            {
-                usuariosRepository.update(usuario);
-                MessageBox.Show("Dados alterados com sucesso!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro" + ex);
-            }*/
         }
 
         private void Perfil_Load(object sender, EventArgs e)

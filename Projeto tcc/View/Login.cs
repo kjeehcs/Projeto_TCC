@@ -21,9 +21,8 @@ namespace Projeto_tcc.View
     {
         private UsuariosRepository usoRep = new UsuariosRepository();
 
-        // Substitua 'SUA_RAW_API_TOKEN_AQUI' pelo seu token Pi-hole
         string apiToken = "0f1c0a417cb4a3c4648d38f67d4ff43346ce6ebb0e1ce54e61193808fb236ca3";
-        string apiUrl = "http://172.20.10.9/admin/api.php"; // Substitua pelo IP do seu Raspberry
+        string apiUrl = "http://172.20.10.9/admin/api.php"; 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
 
         private static extern IntPtr CreateRoundRectRgn
@@ -63,8 +62,7 @@ namespace Projeto_tcc.View
             {
                 if (uso.login_usuario == login && uso.senha_usuario == senha)
                 {
-                    //MessageBox.Show(uso.id_usuario.ToString());
-                    MessageBox.Show("Usuário encontrado");
+                    MessageBox.Show("Bem vindo!!!");
                     this.Hide();
                     Main main = new Main(login);
                     main.Show();
