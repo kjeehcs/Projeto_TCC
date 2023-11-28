@@ -1,7 +1,5 @@
 # Gerenciador de Filtro DNS com Raspberry Pi
 
-# Gerenciador de Filtro DNS com Raspberry Pi
-
 ## Introdução
 
 Bem-vindo ao repositório do projeto de conclusão de curso de Sistemas de Informação! Este trabalho aborda o desenvolvimento de um Gerenciador de Filtro DNS utilizando Raspberry Pi. O projeto visa oferecer uma solução eficiente para controlar o acesso à internet por meio da configuração e gerenciamento de filtros DNS.
